@@ -5,6 +5,8 @@ Good bye!
 
 This is a new feature
 
+This is another line.
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
