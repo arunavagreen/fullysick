@@ -1,0 +1,51 @@
+<%= simple_form_for(@patient) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="row">
+    <div class="col-md-6">
+       <%= f.input :first_name %>
+    </div>
+
+    <div class="col-md-6">
+    <%= f.input :surname %>
+    </div>
+
+    <div class="row">
+    <div class="col-md-6">
+    <%= f.input :phone %>
+    </div>
+
+        <div class="col-md-6">
+    <%= f.input :medicare_number %>
+</div>
+
+  <div class="row">
+    <div class="col-md-6">
+    <%= f.input :address %>
+    </div>
+
+        <div class="col-md-6">
+    <%= f.input :suburb %>
+    </div>
+
+    <div class="row">
+    <div class="col-md-4">
+    <%= f.input :state, collection: ['QLD', 'NSW', 'VIC'] %>
+    </div>
+
+            <div class="col-md-4">
+    <%= f.input :postcode %>
+    </div>
+
+        <div class="col-md-4">
+    <%= f.input :country, priority: ['Australia', 'New Zealand'] %>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    <div class="col-md-12">
+    <%= f.button :submit %>
+  </div>
+  </div>
+<% end %>

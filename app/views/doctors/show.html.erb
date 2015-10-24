@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+ <div class="col-md-4">
+
+<%= image_tag @doctor.photo, class: 'img-responsive img-thumbnail' %>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @doctor.title %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @doctor.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @doctor.last_name %>
+</p>
+
+<p>
+  <strong>Post nominals:</strong>
+  <%= @doctor.post_nominals %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @doctor.bio %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @doctor.photo %>
+</p>
+
+<p>
+  <strong>Specialties</strong>
+
+
+  <ul>
+   <% @doctor.tags.each do |tag| %>
+   <li><%= link_to tag.name, doctors_path(tag: tag.name) %></li>
+   <% end %>
+   </ul>
+</p>
+
+<% if current_user.voted_for? @doctor %>
+
+
+<%= link_to 'Unlike', unlike_doctor_path(@doctor), class: 'btn btn-success btn-sm' %>
+<% else %>
+
+<%= link_to 'Like', like_doctor_path(@doctor), class: 'btn btn-success btn-sm' %>
+<% end %>
+
+<p>Likes: <%= @doctor.votes_for.size %> </p>
+
+
+<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
+<%= link_to 'Back', doctors_path %>

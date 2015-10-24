@@ -1,0 +1,38 @@
+<h1>Thanks!</h1>
+
+<p>
+  <%= @enquiry.name %>, Your eqnuiry hase been received. One of our friendly team
+</p>
+
+
+<p>
+Your enquiry details for yoru records are:
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @enquiry.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @enquiry.name %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @enquiry.message %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @enquiry.phone %>
+</p>
+
+<p>
+  <strong>Enquiry type:</strong>
+  <%= @enquiry.enquiry_type %>
+</p>
+
+<%= link_to 'Edit', edit_enquiry_path(@enquiry) %> |
+<%= link_to 'Back', enquiries_path %>
